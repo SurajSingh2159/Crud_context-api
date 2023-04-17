@@ -44,9 +44,6 @@ const CrudState = (props)=>{
       }
       useEffect(()=>{
             getData()
-            setId(localStorage.getItem('id'))
-            setName(localStorage.getItem('name'))
-            setEmail(localStorage.getItem('email'))
             // console.log(a.getData())
         },[])
 
@@ -64,6 +61,8 @@ const CrudState = (props)=>{
             localStorage.setItem("email", email)
       }
 
+      // const[id, setId] = useState("")
+
       const[id, setId] = useState("")
 
       const handleUpdate=(e)=>{
@@ -75,12 +74,12 @@ const CrudState = (props)=>{
             // .then(()=>{
             //       navigate("/read")
             // })
-      }
+      } 
 
 
 
       return (
-      <CrudContext.Provider value={{handleOnchangeEmail, handleOnchangeName, handleSubmit, data, handleDelete, setLocalStorage, handleUpdate}}>
+      <CrudContext.Provider value={{handleOnchangeEmail, handleOnchangeName, handleSubmit, data, handleDelete, setLocalStorage, handleUpdate, id, setEmail, setId, setName,name,email}}>
             {props.children}
       </CrudContext.Provider>
       )
